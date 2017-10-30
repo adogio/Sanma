@@ -1,6 +1,6 @@
 {
   "name": "sanma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": ":blowfish: A vote and display component for React",
   "main": "lib/import.js",
   "scripts": {
