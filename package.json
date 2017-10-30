@@ -1,14 +1,14 @@
 {
-  "name": "chaetodon",
+  "name": "sanma",
   "version": "1.0.0",
-  "description": ":tropical_fish: A color set generator for adog projects",
+  "description": ":blowfish: A vote and display component for React",
   "main": "lib/import.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adogio/Chaetodon.git"
+    "url": "git+https://github.com/adogio/Sanma.git"
   },
   "keywords": [
     "Adog",
@@ -17,9 +17,9 @@
   "author": "WMXPY",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/adogio/Chaetodon/issues"
+    "url": "https://github.com/adogio/Sanma/issues"
   },
-  "homepage": "https://github.com/adogio/Chaetodon#readme",
+  "homepage": "https://github.com/adogio/Sanma#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
