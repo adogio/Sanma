@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getColor, { WEATHERS } from '../chaetodon/import';
+import getColor, { WEATHERS } from 'chaetodon';
 import VoteOption from './voteOption';
 import propTypes from 'prop-types';
 
