@@ -77,15 +77,30 @@ SanmaVote.propTypes = {
         WEATHERS.CHAOS
     ]),
     votes: propTypes.shape({
-        description: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
-        votes: propTypes.arrayOf(propTypes.shape({
-            id: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
-            description: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
-            options: propTypes.arrayOf(propTypes.shape({
-                id: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
-                name: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired
-            })).isRequired
-        })).isRequired
+        description: propTypes.oneOfType([
+            propTypes.string,
+            propTypes.number]).isRequired,
+        votes: propTypes.oneOfType([
+            propTypes.arrayOf(
+                propTypes.shape({
+                    id: propTypes.oneOfType([
+                        propTypes.string,
+                        propTypes.number]).isRequired,
+                    description: propTypes.oneOfType([
+                        propTypes.string,
+                        propTypes.number]).isRequired,
+                    options: propTypes.arrayOf(
+                        propTypes.shape({
+                            id: propTypes.oneOfType([
+                                propTypes.string,
+                                propTypes.number]).isRequired,
+                            name: propTypes.oneOfType([
+                                propTypes.string,
+                                propTypes.number]).isRequired
+                        })).isRequired
+                })).isRequired, propTypes.oneOf(
+                    ["input", "textarea", "password"]
+                ).isRequired])
     }).isRequired,
     selectable: propTypes.bool,
     onSelect: propTypes.func.isRequired,
