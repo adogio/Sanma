@@ -6,31 +6,55 @@ class SanmaInputOption extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
         this.state = {
-            hover: false
-        };
+            value: this.props.value
+        }
     }
 
     render() {
         return (
-            <div style={{ width: "100%", cursor: "pointer", borderBottom: this.state.hover ? "1px solid black" : "1px solid transparent" }}
-                onMouseEnter={this.handleHover}
-                onMouseLeave={this.handleLeave}
-                onClick={this.handleClick}>
-                <i className="fa fa-circle-o fa-fw" style={{ color: this.state.hover ? "red" : "black" }} />
-                <span>{this.props.children}</span>
+            <div className="left-padding">
+                <input
+                    style={{
+                        width: "100%",
+                        backgroundColor: "transparent",
+                        height: "40px",
+                        border: "0",
+                        borderBottom: !!this.state.value ? "1px solid #" + this.props.colors[0] : "1px solid black"
+                    }}
+                    className="options"
+                    value={this.state.value}
+                    onBlur={this.handleBlur}
+                    onInput={this.handleClick} />
             </div>
         );
     }
 
-    handleClick() {
-        this.props.onClick(this.props.args);
+    handleClick(e) {
+        this.setState({
+            value: e.target.value
+        })
+        this.props.onInput([this.props.args, e.target.value]);
+    }
+
+    handleBlur() {
+        this.props.trigger();
     }
 }
 
 SanmaInputOption.propTypes = {
-    onClick: propTypes.func.isRequired,
-    args: propTypes.any.isRequired
+    onInput: propTypes.func.isRequired,
+    args: propTypes.any.isRequired,
+    controller: propTypes.string.isRequired,
+    trigger: propTypes.func.isRequired,
+    value: propTypes.string.isRequired,
+    colors: propTypes.arrayOf(propTypes.string).isRequired
+}
+
+SanmaInputOption.defaultProps = {
+    colors: ["FF0000", "FF0000", "FF0000", "FF0000", "FF0000"],
+    value: ""
 }
 
 export default SanmaInputOption;
