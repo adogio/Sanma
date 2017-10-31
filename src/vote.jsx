@@ -10,6 +10,9 @@ class SanmaVote extends Component {
         this.renderBadge = this.renderBadge.bind(this);
         this.renderVotes = this.renderVotes.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            isDone: false
+        };
     }
 
     render() {
